@@ -1,15 +1,15 @@
 # itamaeLesson
 
 
-##vagrantでitamae用仮想サーバ作成
+## vagrantでitamae用仮想サーバ作成
 
-#####vagrantfile作成と更新
+##### vagrantfile作成と更新
 ```
 $ mkidr itamaetest
 $ vagrant init
 ```
 
-#####名前とbox(OS)を指定
+##### 名前とbox(OS)を指定
 ```
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
@@ -17,7 +17,7 @@ $ vagrant init
   config.vm.box_url = "https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.0.0/centos-6.6-x86_64.box"
 ```
 
-#####プライベートIP指定
+##### プライベートIP指定
 ```
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -25,12 +25,12 @@ $ vagrant init
   config.vm.network "private_network", ip: "192.168.33.11"
 ```
 
-#####vagrant起動
+##### vagrant起動
 ```
 $ vagrant up
 ```
 
-#####SSH接続用にコンフィグ追加
+##### SSH接続用にコンフィグ追加
 ```
 $ vagrant ssh-config --host itamaetest >> ~/.ssh/config
 ```
@@ -55,12 +55,12 @@ $ ssh itamaetest
 [vagrant@localhost ~]$
 ```
 
-##itamaeインストール
+## itamaeインストール
 ```
 $ sudo gem install itamae
 ```
 
-##receip.rbの作成
+## receip.rbの作成
 ```
 package 'php' do
   action :install
@@ -76,7 +76,7 @@ end
 
 ```
 
-##itamae実行
+## itamae実行
 ```
 $ itamae ssh -u vagrant -h 192.168.33.11 recipe.rb
 ```
