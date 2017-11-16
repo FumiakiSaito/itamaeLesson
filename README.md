@@ -1,4 +1,4 @@
-# itamaeLesson
+# itamae
 
 
 ## vagrantでitamae用仮想サーバ作成
